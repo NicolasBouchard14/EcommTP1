@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  secteurEtudes: MyString
+  niveau: MyString
+  dateDebut: 2018-02-04
+  dateCompletion: 2018-02-04
+  clients: one
+  institutions: one
+
+two:
+  secteurEtudes: MyString
+  niveau: MyString
+  dateDebut: 2018-02-04
+  dateCompletion: 2018-02-04
+  clients: two
+  institutions: two

@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+#gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -57,5 +57,13 @@ gem 'bootstrap','~>4.0.0'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'high_voltage','~>3.0.0'
+#gem 'mdbootstrap-rails', '~> 0.1.1'
+gem 'railties', '~> 5.1', '>= 5.1.4'
+gem 'devise', '~> 4.4'
+
+gem 'cocoon' #, '~> 1.2.11'
+gem 'simple_form' #, '~> 3.1.0'
+
+gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 
 

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clients: one
+  clients_conjoints: one
+  dateDebut: 2018-02-04
+  dateFin: 2018-02-04
+
+two:
+  clients: two
+  clients_conjoints: two
+  dateDebut: 2018-02-04
+  dateFin: 2018-02-04
