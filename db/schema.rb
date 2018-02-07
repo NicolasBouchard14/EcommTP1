@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180204221222) do
+ActiveRecord::Schema.define(version: 20180207174007) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "numeroCivique"
@@ -117,6 +117,60 @@ ActiveRecord::Schema.define(version: 20180204221222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["addresses_id"], name: "index_institutions_on_addresses_id"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "role"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_people_on_project_id"
+  end
+
+  create_table "project_tags", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_tags_on_project_id"
+    t.index ["tag_id"], name: "index_project_tags_on_tag_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_projects_on_owner_id"
+  end
+
+  create_table "sub_tasks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.boolean "done"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_sub_tasks_on_task_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.boolean "done"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
 end
