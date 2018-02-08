@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <div class="form-inline">
+    <b>SubTask</b>
+    <%= f.input :name, placeholder: 'name the subtask', label: false %>
+    <%= f.input :description, placeholder: 'add a description', label: false %>
+    <%= link_to_remove_association f, class: 'btn btn-default btn-xs' do %>
+      <div class="glyphicon glyphicon-remove">
+      </div>
+    <% end %>
+  </div>
+</div>
