@@ -5,17 +5,17 @@ one:
   prenom: MyString
   nom: MyString
   dateNaissance: 2018-02-03
-  nas: 
-  addresses: one
-  nombreEnfants: 
-  compteTaxesProprietaire: 
+  nas: 255988633
+  addresses_id: 1
+  nombreEnfants: 2
+  compteTaxesProprietaire: 1
 
 two:
   id: 
   prenom: MyString
   nom: MyString
   dateNaissance: 2018-02-03
-  nas: 
-  addresses: two
-  nombreEnfants: 
-  compteTaxesProprietaire: 
+  nas: 255988633
+  addresses_id: 2
+  nombreEnfants: 3
+  compteTaxesProprietaire: 1

@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara-webkit', '~> 1.11', '>= 1.11.1'
   gem 'capybara-screenshot'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development do

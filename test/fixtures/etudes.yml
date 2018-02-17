@@ -5,13 +5,13 @@ one:
   niveau: MyString
   dateDebut: 2018-02-04
   dateCompletion: 2018-02-04
-  clients: one
-  institutions: one
+  clients_id: 1
+  institutions_id: 1
 
 two:
   secteurEtudes: MyString
   niveau: MyString
   dateDebut: 2018-02-04
   dateCompletion: 2018-02-04
-  clients: two
-  institutions: two
+  clients_id: 2
+  institutions_id: 2
