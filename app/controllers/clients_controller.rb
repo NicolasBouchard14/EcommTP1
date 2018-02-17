@@ -83,22 +83,11 @@ end
 
 private
 
-def client_params
-  params.require(:client).permit(
-    :prenom,
-    :nom,
-    :dateNaissance,
-    :nas,
-    addresses_attributes: [
-      :id,
-      :numeroCivique,
-      :rue,
-      :codePostal,
-      :ville,
-      :province
-      #timestamp
-    ],
-    :nombreEnfants,
-    :compteTaxesProprietaire
+  def client_params
+    params.require(:client).permit(
+      :prenom, :nom, :dateNaissance, :nas, :nombreEnfants, :compteTaxesProprietaire,
+      addresses_attributes: [:id, :numeroCivique, :rue, :codePostal, :ville, :province]
     )
+  end
+  end
 end
