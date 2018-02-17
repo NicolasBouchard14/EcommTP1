@@ -5,8 +5,6 @@ class CreateClientEtatCivils < ActiveRecord::Migration[5.1]
       t.references :clients, foreign_key: true
       t.datetime :dateDebut
       t.datetime :dateFin
-
-      t.timestamps
     end
   end
 end

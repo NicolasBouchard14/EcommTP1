@@ -4,8 +4,6 @@ class CreateClientHasEnfants < ActiveRecord::Migration[5.1]
       t.references :enfants, foreign_key: true
       t.references :clients, foreign_key: true
       t.integer :lien
-
-      t.timestamps
     end
   end
 end

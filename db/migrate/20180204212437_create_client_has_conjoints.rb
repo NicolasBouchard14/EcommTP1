@@ -4,8 +4,6 @@ class CreateClientHasConjoints < ActiveRecord::Migration[5.1]
       t.references :clients, foreign_key: true
       t.datetime :dateDebut
       t.datetime :dateFin
-
-      t.timestamps
     end
 
     add_foreign_key :clients_has_conjoint, :clients

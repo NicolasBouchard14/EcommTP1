@@ -4,8 +4,6 @@ class CreateEnfants < ActiveRecord::Migration[5.1]
       t.string :nom
       t.string :prenom
       t.datetime :dateNaissance
-
-      t.timestamps
     end
   end
 end

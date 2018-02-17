@@ -1,0 +1,9 @@
+<h1>Tests#index</h1>
+<table class="tests">
+  <% @tests.each do |t|%>
+    <tr>
+      <td><%= t.id %></td>
+      <td><%= t.nom %></td>
+    </tr>
+  <% end %>
+</table>

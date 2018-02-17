@@ -8,8 +8,6 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.references :addresses, foreign_key: true
       t.integer :nombreEnfants
       t.integer :compteTaxesProprietaire
-
-      t.timestamps
     end
   end
 end

@@ -1,0 +1,18 @@
+<h1>Listing clients</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nom client</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.nom %></td>
+      <td>allo</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>link to change moi</h1>

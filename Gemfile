@@ -69,5 +69,3 @@ gem 'cocoon' #, '~> 1.2.11'
 gem 'simple_form' #, '~> 3.1.0'
 
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'
-
-

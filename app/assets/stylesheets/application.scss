@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "tests";
+
+#tests .input {
+
+margin-left: 10px;
+
+}
+
+
+#tests div.nested-fields table {
+
+margin-left: 150px;
+
+width: 80%;
+
+}
+
+
+#tests label.boolean.optional {
+
+width: 50px;
+
+}
+
+
+#tests input[type="checkbox"] { margin:  8px; }
+
+
+td.done_column { width: 80px; }
+
+
+
+//.add_fields, .remove_fields { margin-left: 150px; }
+
+
+#tests > .nested-fields > table .remove_fields { margin-left: 0px; line-height: 30px; }
+
+
+#tests .clearfix { margin-bottom: 2px; }
+
+
+#tests > .nested-fields > .links > a.add_fields { margin-top: 2px; width:100%; display:block; margin-bottom: 20px; }
+
+#tests > .links > a.add_fields { margin-top: 20px; width: 100%; display:block; border-top: 1px dashed silver; }
+
+
+.project-tag-fields { padding: 2px; border: 1px dashed #ddd; }
+
+
+.sub_tasks { margin-left: 100px; }
+
+
+td .btn {
+
+margin-left: 3px;
+
+}
+
+
+.well.well-compact {
+
+margin: 5px;
+
+}
