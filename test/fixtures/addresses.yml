@@ -5,11 +5,11 @@ one:
   rue: MyString
   codePostal: 
   ville: MyString
-  Province: MyString
+  province: MyString
 
 two:
   numeroCivique: MyString
   rue: MyString
   codePostal: 
   ville: MyString
-  Province: MyString
+  province: MyString

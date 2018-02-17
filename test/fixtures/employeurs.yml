@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  addresse: 
+  addresses_id: 1
 
 two:
   name: MyString
-  addresse: 
+  addresses_id: 2

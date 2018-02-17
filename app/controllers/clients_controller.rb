@@ -8,6 +8,7 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html #new.html.erb
       format.xml { render :xml => @client }
+    end
   end
 
 # POST /clients
@@ -88,6 +89,5 @@ private
       :prenom, :nom, :dateNaissance, :nas, :nombreEnfants, :compteTaxesProprietaire,
       addresses_attributes: [:id, :numeroCivique, :rue, :codePostal, :ville, :province]
     )
-  end
   end
 end

@@ -13,16 +13,19 @@
  *= require_tree .
  *= require_self
  */
- @import "tests";
+ @import "bootstrap";
+ @import "font-awesome";
+ @import "navbar-top-fixed";
+ @import "clients";
 
-#tests .input {
+#clients .input {
 
 margin-left: 10px;
 
 }
 
 
-#tests div.nested-fields table {
+#clients div.nested-fields table {
 
 margin-left: 150px;
 
@@ -31,14 +34,14 @@ width: 80%;
 }
 
 
-#tests label.boolean.optional {
+#clients label.boolean.optional {
 
 width: 50px;
 
 }
 
 
-#tests input[type="checkbox"] { margin:  8px; }
+#clients input[type="checkbox"] { margin:  8px; }
 
 
 td.done_column { width: 80px; }
@@ -48,15 +51,15 @@ td.done_column { width: 80px; }
 //.add_fields, .remove_fields { margin-left: 150px; }
 
 
-#tests > .nested-fields > table .remove_fields { margin-left: 0px; line-height: 30px; }
+#clients > .nested-fields > table .remove_fields { margin-left: 0px; line-height: 30px; }
 
 
-#tests .clearfix { margin-bottom: 2px; }
+#clients .clearfix { margin-bottom: 2px; }
 
 
-#tests > .nested-fields > .links > a.add_fields { margin-top: 2px; width:100%; display:block; margin-bottom: 20px; }
+#clients > .nested-fields > .links > a.add_fields { margin-top: 2px; width:100%; display:block; margin-bottom: 20px; }
 
-#tests > .links > a.add_fields { margin-top: 20px; width: 100%; display:block; border-top: 1px dashed silver; }
+#clients > .links > a.add_fields { margin-top: 20px; width: 100%; display:block; border-top: 1px dashed silver; }
 
 
 .project-tag-fields { padding: 2px; border: 1px dashed #ddd; }
