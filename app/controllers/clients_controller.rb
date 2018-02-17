@@ -1,5 +1,16 @@
 class ClientsController < ApplicationController
 
+  # GET /clients
+  # GET /clients.xml
+    def index
+      @clients = Client.all
+
+      respond_to do |format|
+        format.html #index.html.erb
+        format.xml { render :xml => @clients }
+      end
+    end
+
 # GET /clients/new
 # GET /clients/new.xml
   def new
@@ -56,17 +67,6 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(clients_url) }
       format.xml  { head :ok }
-    end
-  end
-
-# GET /clients
-# GET /clients.xml
-  def index
-    @clients = Client.all
-
-    respond_to do |format|
-      format.html #index.html.erb
-      format.xml { render :xml => @clients }
     end
   end
 

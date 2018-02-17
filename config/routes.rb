@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :tests
-  root to: 'tests#index'
+  resources :clients
+  root to: 'clients#index'
 end

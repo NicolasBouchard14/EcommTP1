@@ -1,18 +1,18 @@
-<h1>Listing clients</h1>
-<table class="table">
+<h1>Liste des clients</h1>
+<table>
   <thead>
     <tr>
-      <th>Nom client</th>
+      <th>Nom</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <% @clients.each do |client| %>
+    <% @clients.each do |c| %>
     <tr>
-      <td><%= client.nom %></td>
-      <td>allo</td>
+      <td><%= c.nom %></td>
+      <td>Ajouter boutons/links pour Show, Edit, Destroy ici</td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<h1>link to change moi</h1>
+<%= link_to 'Nouveau Client', new_client_path %>
