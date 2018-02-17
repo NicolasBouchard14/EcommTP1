@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217011234) do
+ActiveRecord::Schema.define(version: 20180217013408) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "numeroCivique"
@@ -18,8 +18,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.string "codePostal"
     t.string "ville"
     t.string "province"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "client_etat_civils", force: :cascade do |t|
@@ -27,8 +25,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.integer "clients_id"
     t.datetime "dateDebut"
     t.datetime "dateFin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["clients_id"], name: "index_client_etat_civils_on_clients_id"
     t.index ["etat_civils_id"], name: "index_client_etat_civils_on_etat_civils_id"
   end
@@ -38,8 +34,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.integer "employeur_id"
     t.datetime "dateDebut"
     t.datetime "dateFin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_client_has_employeurs_on_client_id"
     t.index ["employeur_id"], name: "index_client_has_employeurs_on_employeur_id"
   end
@@ -48,8 +42,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.integer "enfants_id"
     t.integer "clients_id"
     t.integer "lien"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["clients_id"], name: "index_client_has_enfants_on_clients_id"
     t.index ["enfants_id"], name: "index_client_has_enfants_on_enfants_id"
   end
@@ -62,8 +54,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.integer "addresses_id"
     t.integer "nombreEnfants"
     t.integer "compteTaxesProprietaire"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["addresses_id"], name: "index_clients_on_addresses_id"
   end
 
@@ -71,16 +61,12 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.integer "clients_id"
     t.datetime "dateDebut"
     t.datetime "dateFin"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["clients_id"], name: "index_clients_has_conjoint_on_clients_id"
   end
 
   create_table "employeurs", force: :cascade do |t|
     t.string "name"
     t.integer "addresses_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["addresses_id"], name: "index_employeurs_on_addresses_id"
   end
 
@@ -88,14 +74,10 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.string "nom"
     t.string "prenom"
     t.datetime "dateNaissance"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "etat_civils", force: :cascade do |t|
     t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "etudes", force: :cascade do |t|
@@ -105,8 +87,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
     t.datetime "dateCompletion"
     t.integer "clients_id"
     t.integer "institutions_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["clients_id"], name: "index_etudes_on_clients_id"
     t.index ["institutions_id"], name: "index_etudes_on_institutions_id"
   end
@@ -114,8 +94,6 @@ ActiveRecord::Schema.define(version: 20180217011234) do
   create_table "institutions", force: :cascade do |t|
     t.string "nom"
     t.integer "addresses_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["addresses_id"], name: "index_institutions_on_addresses_id"
   end
 

@@ -7,8 +7,6 @@ class CreateEtudes < ActiveRecord::Migration[5.1]
       t.datetime :dateCompletion
       t.references :clients, foreign_key: true
       t.references :institutions, foreign_key: true
-
-      t.timestamps
     end
   end
 end
