@@ -1,7 +1,8 @@
 <h1>Liste des clients</h1>
-<table>
+<table class="table">
   <thead>
     <tr>
+      <th>Prénom</th>
       <th>Nom</th>
       <th>Actions</th>
     </tr>
@@ -11,7 +12,11 @@
     <tr>
       <td><%= c.prenom %></td>
       <td><%= c.nom %></td>
-      <td>Ajouter boutons/links pour Show, Edit, Destroy ici</td>
+      <td>
+        <%= link_to 'Show', c, class: 'btn btn-default btn-xs' %>
+        <%= link_to 'Edit', edit_client_path(c), class: 'btn btn-default btn-xs' %>
+        <%= link_to 'Destroy', c, :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-xs btn-danger' %>
+      </td>
     </tr>
     <% end %>
   </tbody>
