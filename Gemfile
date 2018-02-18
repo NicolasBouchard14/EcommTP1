@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capybara-screenshot'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'faker', '~> 1.8', '>= 1.8.7'
 end
 
 group :development do

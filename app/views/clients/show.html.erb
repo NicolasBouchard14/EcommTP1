@@ -1,2 +1,49 @@
-<h1>Clients#show</h1>
-<p>Find me in app/views/clients/show.html.erb</p>
+<h1>Détails du client</h1>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">Informations générales</div>
+      <div class="card-body">
+        <%= simple_form_for @client do |client_form| %>
+          <%= client_form.input :nom, label: 'Nom', disabled: true %>
+          <%= client_form.input :prenom, label: 'Prénom', disabled: true  %>
+          <%= client_form.input :dateNaissance, label: 'Date de naissance',  disabled: true, as: :date,
+                                start_year: Date.today.year - 90,
+                                end_year: Date.today.year,
+                                order: [:day, :month, :year] %>
+          <%= client_form.input :nas, label: 'Numéro d\'assurance sociale', disabled: true  %>
+          <%- #input pour addresse  -%>
+          <%= client_form.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50, disabled: true %>
+          <%= client_form.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes', disabled: true %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">Adresse</div>
+      <div class="card-body">
+        <% @client.addresse do |addresse| %>
+          <%= addresse.numeroCivque %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% if @client.enfants.nil? %>
+  <div class="row">
+    <div class="panel panel-group">
+      <% @client.enfants.each do |e| %>
+        <div class="panel panel-default">
+          <div class="panel panel-heading">Enfant</div>
+          <div class="panel panel-body">
+            <div class="col-lg-4">
+              <%= text_field(e, :name) %>
+            </div>
+          </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

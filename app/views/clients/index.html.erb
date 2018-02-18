@@ -2,16 +2,16 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Prénom</th>
       <th>Nom</th>
+      <th>Prénom</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @clients.each do |c| %>
     <tr>
-      <td><%= c.prenom %></td>
       <td><%= c.nom %></td>
+      <td><%= c.prenom %></td>
       <td>
         <%= link_to 'Show', c, class: 'btn btn-default btn-xs' %>
         <%= link_to 'Edit', edit_client_path(c), class: 'btn btn-default btn-xs' %>

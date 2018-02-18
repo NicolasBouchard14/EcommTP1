@@ -14,11 +14,17 @@ class ClientsController < ApplicationController
 # GET /clients/client1.xml
   def show
     @client = Client.find(params[:id])
+    @client.addresse = Addresse.find(@client.addresse_id)
+    if @client.nil?
+      @clients = Client.all
+      flash.now[:alert] = "Les détails du client n'ont pas été trouvés"
+      render "index"
+    end
     respond_to do |format|
       format.html #show.html.erb
       format.xml  { render :xml => @client }
+    end
   end
-end
 
 # GET /clients/new
 # GET /clients/new.xml

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217013408) do
+ActiveRecord::Schema.define(version: 20180216221128) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "numeroCivique"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20180217013408) do
   end
 
   create_table "client_has_enfants", force: :cascade do |t|
-    t.integer "enfants_id"
-    t.integer "clients_id"
+    t.integer "enfant_id"
+    t.integer "client_id"
     t.integer "lien"
-    t.index ["clients_id"], name: "index_client_has_enfants_on_clients_id"
-    t.index ["enfants_id"], name: "index_client_has_enfants_on_enfants_id"
+    t.index ["client_id"], name: "index_client_has_enfants_on_client_id"
+    t.index ["enfant_id"], name: "index_client_has_enfants_on_enfant_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20180217013408) do
     t.string "nom"
     t.datetime "dateNaissance"
     t.string "nas"
-    t.integer "addresses_id"
+    t.integer "addresse_id"
     t.integer "nombreEnfants"
     t.integer "compteTaxesProprietaire"
-    t.index ["addresses_id"], name: "index_clients_on_addresses_id"
+    t.index ["addresse_id"], name: "index_clients_on_addresse_id"
   end
 
   create_table "clients_has_conjoint", force: :cascade do |t|
