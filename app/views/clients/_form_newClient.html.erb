@@ -1,4 +1,3 @@
-<h1> Je suis un formulaire simple </h1>
 <%= simple_form_for @client do |f| %>
 <div id="infoClient">
   <%= f.input :nom, label: 'Nom' %>
@@ -11,10 +10,13 @@
   <%= f.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes' %>
 </div>
 <div id="infoAdresse">
-  <%= f.association :addresse, :label_method => lambda { |a| "#{a.numeroCivique} #{a.rue} | #{a.ville}, #{a.province} | #{a.codePostal}"},
-    label: 'Adresse', collection: Addresse.order(:numeroCivique)%>
+  <%= f.simple_fields_for :addresse do |a| %>
+  <%= render 'addresse_fields', :f => a %>
+  <% end %>
+  <%= link_to_add_association 'Ajouter une adresse', f, :addresse %>
 </div>
 <div id="infoEnfant">
   <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
 </div>
+<%= f.button :submit %>
 <% end %>
