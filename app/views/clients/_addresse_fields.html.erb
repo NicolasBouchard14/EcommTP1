@@ -7,3 +7,8 @@
   <%= link_to_remove_association "Enlever adresse", f %>
   <h2>---</h2>
 </div>
+
+<%= f.simple_fields_for :addresse do |a| %>
+<%= render 'addresse_fields', :f => a %>
+<% end %>
+<%= link_to_add_association 'Ajouter une adresse', f, :addresse %>
