@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  belongs_to :addresse
+  belongs_to :addresse, :class_name => 'Addresse'
   has_many :client_has_enfants
   has_many :enfants, :through => :client_has_enfants
   has_many :client_has_conjoints
