@@ -11,7 +11,8 @@
   <%= f.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes' %>
 </div>
 <div id="infoAdresse">
-  <%= f.association :addresse %>
+  <%= f.association :addresse, :label_method => lambda { |a| "#{a.numeroCivique} #{a.rue} | #{a.ville}, #{a.province} | #{a.codePostal}"},
+    label: 'Adresse', collection: Addresse.order(:numeroCivique)%>
 </div>
 <div id="infoEnfant">
   <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
