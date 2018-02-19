@@ -20,6 +20,7 @@
       </div>
     </div>
   </div>
+
   <!-- ADDRESSE -->
   <div class="col-sm-6">
     <div class="card h-100">
@@ -51,33 +52,33 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card h-100">
-      <div class="card-header">Études</div>
-      <div class="card-body">
-        <div class="form-group string optional disabled client_etude">
-          <label class="control-label string optional disabled" for="client_etude">Études</label>
-          <input id="client_etude" class="form-control string optional disabled" disabled="disabled" value="<%= @etudes.secteurEtudes %>" type="text">
-        </div>
+<% if @client.etudes %>
+  <p>
+  <h1>Études</h1>
+  <% @client.etudes.each_with_index do |etude, i| %>
+    <% if (i % 2 == 0) %>
+      <div class="row">
+        <%= render :partial => 'clients/showEtude', :locals => {:etude => etude, :index => i} %>
       </div>
-    </div>
+    <% else %>
+      <%= render :partial => 'clients/showEtude', :locals => {:etude => etude, :index => i} %>
+    <% end %>
+  <% end %>
   </div>
-</div>
+  </p>
+<% end %>
 
-<% if @client.enfants.nil? %>
-  <div class="row">
-    <div class="panel panel-group">
-      <% @client.enfants.each do |e| %>
-        <div class="panel panel-default">
-          <div class="panel panel-heading">Enfant</div>
-          <div class="panel panel-body">
-            <div class="col-lg-4">
-              <%= text_field(e, :name) %>
-            </div>
-          </div>
-      <% end %>
+<% if @client.enfants %>
+  <p>
+  <h1>Enfants</h1>
+  <% @client.enfants.each_with_index do |enfant, i| %>
+    <% if (i % 2 == 0) %>
+      <div class="row">
+        <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i} %>
+    <% else %>
+      <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i} %>
       </div>
-    </div>
-  </div>
+      </p>
+    <% end %>
+  <% end %>
 <% end %>
