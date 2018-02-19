@@ -18,10 +18,12 @@
         <label class="control-label string optional disabled" for="etude_dateCompletion">Date de complétion</label>
         <input id="etude_dateCompletion" class="form-control string optional disabled" disabled="disabled" value="<%= etude.dateCompletion %>" type="text">
       </div>
-      <div class="form-group string optional disabled etude_institution">
-        <label class="control-label string optional disabled" for="etude_institution"><b></b>Institution</label>
-        <input id="etude_institution" class="form-control string optional disabled" disabled="disabled" value="<%= etude.institution.nom %>" type="text">
+      <div class="form-group string optional disabled institution_nom">
+        <label class="control-label string optional disabled" for="institution_nom"><b>Institution</b></label>
+        <input id="institution_nom" class="form-control string optional disabled" disabled="disabled" value="<%= etude.institution.nom %>" type="text">
       </div>
+      <% p(etude.institution) %>
+      <%= render :partial => 'clients/showAddresse', :locals => {:addresse => etude.institution.addresse} %>
     </div>
   </div>
 </div>

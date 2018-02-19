@@ -21,35 +21,8 @@
     </div>
   </div>
 
-  <!-- ADDRESSE -->
-  <div class="col-sm-6">
-    <div class="card h-100">
-      <div class="card-header">Adresse</div>
-      <div class="card-body">
-        <div class="form-group string optional disabled client_addresse_numeroCivique">
-          <label class="control-label string optional disabled" for="client_addresse_numeroCivique">Numéro
-            civique</label>
-          <input id="client_addresse_numeroCivique" class="form-control string optional disabled" disabled="disabled" value="<%= @client.addresse.numeroCivique %>" type="text">
-        </div>
-        <div class="form-group string optional disabled client_addresse_rue">
-          <label class="control-label string optional disabled" for="client_addresse_rue">Rue</label>
-          <input id="client_addresse_rue" class="form-control string optional disabled" disabled="disabled" value="<%= @client.addresse.rue %>" type="text">
-        </div>
-        <div class="form-group string optional disabled client_addresse_codePostal">
-          <label class="control-label string optional disabled" for="client_addresse_codePostal">Code Postal</label>
-          <input id="client_addresse_codePostal" class="form-control string optional disabled" disabled="disabled" value="<%= @client.addresse.codePostal %>" type="text">
-        </div>
-        <div class="form-group string optional disabled client_addresse_ville">
-          <label class="control-label string optional disabled" for="client_addresse_ville">Ville</label>
-          <input id="client_addresse_ville" class="form-control string optional disabled" disabled="disabled" value="<%= @client.addresse.ville %>" type="text">
-        </div>
-        <div class="form-group string optional disabled client_addresse_province">
-          <label class="control-label string optional disabled" for="client_addresse_province">Province</label>
-          <input id="client_addresse_province" class="form-control string optional disabled" disabled="disabled" value="<%= @client.addresse.province %>" type="text">
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render :partial => 'clients/showAddresse', :locals => {:addresse => @client.addresse} %>
+
 </div>
 
 <% if !@client.etudes.nil? %>
