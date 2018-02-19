@@ -9,6 +9,7 @@
   <%= f.input :nas, label: 'Numéro d\'assurance sociale' %>
   <%= f.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes' %>
 </div>
+<h2>Adresse:</h2>
 <div id="infoAdresse">
   <%= f.simple_fields_for :addresse_attributes do |frmAdresse| %>
     <%= frmAdresse.input :numeroCivique, label: 'Numéro civique' %>
@@ -18,14 +19,16 @@
     <%= frmAdresse.input :province, label: 'Province' %>
   <% end %>
 </div>
+<h2>Enfant:</h2>
 <div id="infoEnfant">
   <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
 </div>
+<h2>Étude:</h2>
 <div id="infoEtude">
   <%= f.simple_fields_for :etudes do |frmEtude| %>
     <%= render 'etude_fields', :f => frmEtude %>
-  <% end %>
-  <% link_to_add_association 'Ajouter étude', f, :etudes %>
+    <% end %>
+    <%= link_to_add_association 'Ajouter étude', f, :etudes %>
 </div>
 <%= f.button :submit %>
 <% end %>
