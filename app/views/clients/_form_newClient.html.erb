@@ -1,5 +1,5 @@
-<h1> Je suis un formulaire simple </h1>
 <%= simple_form_for @client do |f| %>
+<div id="infoClient">
   <%= f.input :nom, label: 'Nom' %>
   <%= f.input :prenom, label: 'Prénom' %>
   <%= f.input :dateNaissance, label: 'Date de naissance', as: :date,
@@ -7,7 +7,19 @@
                               end_year: Date.today.year,
                               order: [:day, :month, :year] %>
   <%= f.input :nas, label: 'Numéro d\'assurance sociale' %>
-  <%-#input pour addresse-%>
-  <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
   <%= f.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes' %>
+</div>
+<div id="infoAdresse">
+  <%= f.simple_fields_for :addresse_attributes do |ad| %>
+    <%= ad.input :numeroCivique, label: 'Numéro civique' %>
+    <%= ad.input :rue, label: 'Rue' %>
+    <%= ad.input :codePostal, label: 'Code postal' %>
+    <%= ad.input :ville, label: 'Ville' %>
+    <%= ad.input :province, label: 'Province' %>
+  <% end %>
+</div>
+<div id="infoEnfant">
+  <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
+</div>
+<%= f.button :submit %>
 <% end %>
