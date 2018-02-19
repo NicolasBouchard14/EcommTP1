@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20180216221128) do
   end
 
   create_table "client_etat_civils", force: :cascade do |t|
-    t.integer "etat_civils_id"
-    t.integer "clients_id"
+    t.integer "etat_civil_id"
+    t.integer "client_id"
     t.datetime "dateDebut"
     t.datetime "dateFin"
-    t.index ["clients_id"], name: "index_client_etat_civils_on_clients_id"
-    t.index ["etat_civils_id"], name: "index_client_etat_civils_on_etat_civils_id"
+    t.index ["client_id"], name: "index_client_etat_civils_on_client_id"
+    t.index ["etat_civil_id"], name: "index_client_etat_civils_on_etat_civil_id"
   end
 
   create_table "client_has_employeurs", force: :cascade do |t|
@@ -58,16 +58,16 @@ ActiveRecord::Schema.define(version: 20180216221128) do
   end
 
   create_table "clients_has_conjoint", force: :cascade do |t|
-    t.integer "clients_id"
+    t.integer "client_id"
     t.datetime "dateDebut"
     t.datetime "dateFin"
-    t.index ["clients_id"], name: "index_clients_has_conjoint_on_clients_id"
+    t.index ["client_id"], name: "index_clients_has_conjoint_on_client_id"
   end
 
   create_table "employeurs", force: :cascade do |t|
     t.string "name"
-    t.integer "addresses_id"
-    t.index ["addresses_id"], name: "index_employeurs_on_addresses_id"
+    t.integer "addresse_id"
+    t.index ["addresse_id"], name: "index_employeurs_on_addresse_id"
   end
 
   create_table "enfants", force: :cascade do |t|
@@ -85,16 +85,16 @@ ActiveRecord::Schema.define(version: 20180216221128) do
     t.string "niveau"
     t.datetime "dateDebut"
     t.datetime "dateCompletion"
-    t.integer "clients_id"
-    t.integer "institutions_id"
-    t.index ["clients_id"], name: "index_etudes_on_clients_id"
-    t.index ["institutions_id"], name: "index_etudes_on_institutions_id"
+    t.integer "client_id"
+    t.integer "institution_id"
+    t.index ["client_id"], name: "index_etudes_on_client_id"
+    t.index ["institution_id"], name: "index_etudes_on_institution_id"
   end
 
   create_table "institutions", force: :cascade do |t|
     t.string "nom"
-    t.integer "addresses_id"
-    t.index ["addresses_id"], name: "index_institutions_on_addresses_id"
+    t.integer "addresse_id"
+    t.index ["addresse_id"], name: "index_institutions_on_addresse_id"
   end
 
   create_table "tests", force: :cascade do |t|
