@@ -15,6 +15,7 @@ class ClientsController < ApplicationController
   def show
     @client = Client.find(params[:id])
     @client.addresse = Addresse.find(@client.addresse_id)
+    @etudes = Etude.find_by_client_id(@client.id)
     if @client.nil?
       @clients = Client.all
       flash.now[:alert] = "Les détails du client n'ont pas été trouvés"
