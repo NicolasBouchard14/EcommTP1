@@ -10,16 +10,22 @@
   <%= f.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes' %>
 </div>
 <div id="infoAdresse">
-  <%= f.simple_fields_for :addresse_attributes do |ad| %>
-    <%= ad.input :numeroCivique, label: 'Numéro civique' %>
-    <%= ad.input :rue, label: 'Rue' %>
-    <%= ad.input :codePostal, label: 'Code postal' %>
-    <%= ad.input :ville, label: 'Ville' %>
-    <%= ad.input :province, label: 'Province' %>
+  <%= f.simple_fields_for :addresse_attributes do |frmAdresse| %>
+    <%= frmAdresse.input :numeroCivique, label: 'Numéro civique' %>
+    <%= frmAdresse.input :rue, label: 'Rue' %>
+    <%= frmAdresse.input :codePostal, label: 'Code postal' %>
+    <%= frmAdresse.input :ville, label: 'Ville' %>
+    <%= frmAdresse.input :province, label: 'Province' %>
   <% end %>
 </div>
 <div id="infoEnfant">
   <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
+</div>
+<div id="infoEtude">
+  <%= f.simple_fields_for :etudes do |frmEtude| %>
+    <%= render 'etude_fields', :f => frmEtude %>
+  <% end %>
+  <% link_to_add_association 'Ajouter étude', f, :etudes %>
 </div>
 <%= f.button :submit %>
 <% end %>
