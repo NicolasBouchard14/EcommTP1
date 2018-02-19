@@ -52,7 +52,7 @@
   </div>
 </div>
 
-<% if @client.etudes %>
+<% if !@client.etudes.nil? %>
   <p>
   <h1>Études</h1>
   <% @client.etudes.each_with_index do |etude, i| %>
@@ -68,15 +68,15 @@
   </p>
 <% end %>
 
-<% if @client.enfants %>
+<% if !@client.enfants.nil? %>
   <p>
   <h1>Enfants</h1>
   <% @client.enfants.each_with_index do |enfant, i| %>
     <% if (i % 2 == 0) %>
       <div class="row">
-        <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i} %>
+        <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i, :collection => @client.client_has_enfants} %>
     <% else %>
-      <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i} %>
+      <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i, :collection => @client.client_has_enfants} %>
       </div>
       </p>
     <% end %>
