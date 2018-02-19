@@ -19,11 +19,17 @@
     <%= frmAdresse.input :province, label: 'Province' %>
   <% end %>
 </div>
-<h2>Enfant:</h2>
+<h2>Enfant(s):</h2>
 <div id="infoEnfant">
   <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
+  <div id="enfant">
+    <%= f.simple_fields_for :client_has_enfants do |frmClientHasEnfant| %>
+      <%= render 'client_has_enfant_fields', :f => frmClientHasEnfant %>
+      <% end %>
+      <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants %>
+  </div>
 </div>
-<h2>Étude:</h2>
+<h2>Étude(s):</h2>
 <div id="infoEtude">
   <%= f.simple_fields_for :etudes do |frmEtude| %>
     <%= render 'etude_fields', :f => frmEtude %>
