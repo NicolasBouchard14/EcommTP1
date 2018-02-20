@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do |i|
+30.times do |i|
   Addresse.create(numeroCivique: Faker::Address.building_number, rue: Faker::Address.street_name, codePostal: Faker::Address.zip,
                   ville: Faker::Address.city, province: Faker::Address.state)
 end
@@ -26,7 +26,7 @@ end
 end
 
 10.times do |i|
-  Institution.create(nom: Faker::Educator.university, addresse_id: Faker::Number.between(1, 10))
+  Institution.create(nom: Faker::Educator.university, addresse_id: i+10)
 end
 
 10.times do |i|
@@ -35,7 +35,7 @@ end
 end
 
 10.times do |i|
-  Employeur.create(name: Faker::Company.name, addresse_id: Faker::Number.between(1, 10))
+  Employeur.create(name: Faker::Company.name, addresse_id: i+20)
 end
 
 10.times do |i|

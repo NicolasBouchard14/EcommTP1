@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20180216221128) do
     t.index ["etat_civil_id"], name: "index_client_etat_civils_on_etat_civil_id"
   end
 
+  create_table "client_has_conjoints", force: :cascade do |t|
+    t.integer "client_id"
+    t.datetime "dateDebut"
+    t.datetime "dateFin"
+    t.index ["client_id"], name: "index_client_has_conjoints_on_client_id"
+  end
+
   create_table "client_has_employeurs", force: :cascade do |t|
     t.integer "client_id"
     t.integer "employeur_id"
@@ -55,13 +62,6 @@ ActiveRecord::Schema.define(version: 20180216221128) do
     t.integer "nombreEnfants"
     t.integer "compteTaxesProprietaire"
     t.index ["addresse_id"], name: "index_clients_on_addresse_id"
-  end
-
-  create_table "clients_has_conjoint", force: :cascade do |t|
-    t.integer "client_id"
-    t.datetime "dateDebut"
-    t.datetime "dateFin"
-    t.index ["client_id"], name: "index_clients_has_conjoint_on_client_id"
   end
 
   create_table "employeurs", force: :cascade do |t|
