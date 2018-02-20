@@ -1,57 +1,95 @@
 <h1>Détails du client</h1>
 
 <!-- CLIENT -->
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card h-100">
-      <div class="card-header">Informations générales</div>
-      <div class="card-body">
-        <%= simple_form_for @client do |client_form| %>
-          <%= client_form.input :nom, label: 'Nom', disabled: true %>
-          <%= client_form.input :prenom, label: 'Prénom', disabled: true %>
-          <%= client_form.input :dateNaissance, label: 'Date de naissance', disabled: true, as: :date,
-                                start_year: Date.today.year - 90,
-                                end_year: Date.today.year,
-                                order: [:day, :month, :year] %>
-          <%= client_form.input :nas, label: 'Numéro d\'assurance sociale', disabled: true %>
-          <%= client_form.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50, disabled: true %>
-          <%= client_form.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes', disabled: true %>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card h-100">
+        <h3 class="card-header">Informations générales</h3>
+        <div class="card-body">
+          <%= simple_form_for @client do |client_form| %>
+            <%= client_form.input :nom, label: 'Nom', disabled: true %>
+            <%= client_form.input :prenom, label: 'Prénom', disabled: true %>
+            <%= client_form.input :dateNaissance, label: 'Date de naissance', disabled: true, as: :date,
+                                  start_year: Date.today.year - 90,
+                                  end_year: Date.today.year,
+                                  order: [:day, :month, :year] %>
+            <%= client_form.input :nas, label: 'Numéro d\'assurance sociale', disabled: true %>
+            <%= client_form.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50, disabled: true %>
+            <%= client_form.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes', disabled: true %>
+          <% end %>
+        </div>
       </div>
     </div>
+    <%= render :partial => 'clients/showAddresse', :locals => {:addresse => @client.addresse} %>
   </div>
-
-  <%= render :partial => 'clients/showAddresse', :locals => {:addresse => @client.addresse} %>
-
 </div>
 
-<% if !@client.etudes.nil? %>
+<% if !@client.etudes.empty? %>
   <p>
-  <h1>Études</h1>
-  <% @client.etudes.each_with_index do |etude, i| %>
-    <% if (i % 2 == 0) %>
-      <div class="row">
+  <div class="container">
+    <h1>Études</h1>
+    <% @client.etudes.each_with_index do |etude, i| %>
+      <% if (i % 2 == 0) %>
+        <div class="row">
+          <%= render :partial => 'clients/showEtude', :locals => {:etude => etude, :index => i} %>
+      <% else %>
         <%= render :partial => 'clients/showEtude', :locals => {:etude => etude, :index => i} %>
-      </div>
-    <% else %>
-      <%= render :partial => 'clients/showEtude', :locals => {:etude => etude, :index => i} %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
   </p>
 <% end %>
 
-<% if !@client.enfants.nil? %>
+<% if !@client.enfants.empty? %>
   <p>
-  <h1>Enfants</h1>
-  <% @client.enfants.each_with_index do |enfant, i| %>
-    <% if (i % 2 == 0) %>
-      <div class="row">
+  <div class="container">
+    <h1>Enfants</h1>
+    <% @client.enfants.each_with_index do |enfant, i| %>
+      <% if (i % 2 == 0) %>
+        <div class="row">
+          <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i, :collection => @client.client_has_enfants} %>
+      <% else %>
         <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i, :collection => @client.client_has_enfants} %>
-    <% else %>
-      <%= render :partial => 'clients/showEnfant', :locals => {:enfant => enfant, :index => i, :collection => @client.client_has_enfants} %>
-      </div>
-      </p>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  </p>
 <% end %>
+
+<% if !@client.etat_civils.empty? %>
+  <p>
+  <div class="container">
+    <h1>États civils</h1>
+    <% @client.etat_civils.each_with_index do |etat_civil, i| %>
+      <% if (i % 2 == 0) %>
+        <div class="row">
+          <%= render :partial => 'clients/showEtatCivil', :locals => {:etatCivil => etat_civil, :index => i, :collection => @client.client_etat_civils} %>
+      <% else %>
+        <%= render :partial => 'clients/showEtatCivil', :locals => {:etatCivil => etat_civil, :index => i, :collection => @client.client_etat_civils} %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  </p>
+<% end %>
+
+<% if !@client.employeurs.empty? %>
+  <p>
+  <div class="container">
+    <h1>Employeurs</h1>
+    <% @client.employeurs.each_with_index do |employeur, i| %>
+      <% if (i % 2 == 0) %>
+        <div class="row">
+          <%= render :partial => 'clients/showEmployeur', :locals => {:employeur => employeur, :index => i, :collection => @client.client_has_employeurs} %>
+      <% else %>
+        <%= render :partial => 'clients/showEmployeur', :locals => {:employeur => employeur, :index => i, :collection => @client.client_has_employeurs} %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  </p>
+<% end %>
+

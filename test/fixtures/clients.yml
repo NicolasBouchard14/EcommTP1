@@ -6,7 +6,7 @@ one:
   nom: MyString
   dateNaissance: 2018-02-03
   nas: 255988633
-  addresses_id: 1
+  addresse_id: 1
   nombreEnfants: 2
   compteTaxesProprietaire: 1
 
@@ -16,6 +16,6 @@ two:
   nom: MyString
   dateNaissance: 2018-02-03
   nas: 255988633
-  addresses_id: 2
+  addresse_id: 2
   nombreEnfants: 3
   compteTaxesProprietaire: 1

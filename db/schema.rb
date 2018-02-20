@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20180216221128) do
   end
 
   create_table "etat_civils", force: :cascade do |t|
-    t.string "type"
+    t.string "etat"
   end
 
   create_table "etudes", force: :cascade do |t|

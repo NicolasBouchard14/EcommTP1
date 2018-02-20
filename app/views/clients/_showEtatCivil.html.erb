@@ -1,0 +1,19 @@
+<div class="col-sm-6">
+  <div class="card h-100">
+    <h3 class="card-header">État civil #<%= index %></h3>
+    <div class="card-body">
+      <div class="form-group string optional disabled etatCivil_name">
+        <label class="control-label string optional disabled" for="etatCivil_name">Nom</label>
+        <input id="etatCivil_name" class="form-control string optional disabled" disabled="disabled" value="<%= etatCivil.etat %>" type="text">
+      </div>
+      <div class="form-group string optional disabled etatCivil_dateDebut">
+        <label class="control-label string optional disabled" for="etatCivil_dateDebut">Date de début</label>
+        <input id="etatCivil_dateDebut" class="form-control string optional disabled" disabled="disabled" value="<%= collection.first.dateDebut.to_date %>" type="text">
+      </div>
+      <div class="form-group string optional disabled etatCivil_dateFin">
+        <label class="control-label string optional disabled" for="etatCivil_dateFin">Date de début</label>
+        <input id="etatCivil_dateFin" class="form-control string optional disabled" disabled="disabled" value="<%= collection.first.dateFin.to_date %>" type="text">
+      </div>
+    </div>
+  </div>
+</div>

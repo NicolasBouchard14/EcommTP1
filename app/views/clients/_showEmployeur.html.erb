@@ -1,0 +1,42 @@
+<div class="col-sm-6">
+  <div class="card h-100">
+    <h3 class="card-header">Employeur #<%= index %></h3>
+    <div class="card-body">
+      <div class="form-group string optional disabled employeur_name">
+        <label class="control-label string optional disabled" for="employeur_name">Nom</label>
+        <input id="employeur_name" class="form-control string optional disabled" disabled="disabled" value="<%= employeur.name %>" type="text">
+      </div>
+      <div class="form-group string optional disabled employeur_dateDebut">
+        <label class="control-label string optional disabled" for="employeur_dateDebut">Date de début</label>
+        <input id="employeur_dateDebut" class="form-control string optional disabled" disabled="disabled" value="<%= collection.first.dateDebut.to_date %>" type="text">
+      </div>
+      <div class="form-group string optional disabled employeur_dateFin">
+        <label class="control-label string optional disabled" for="employeur_dateFin">Date de début</label>
+        <input id="employeur_dateFin" class="form-control string optional disabled" disabled="disabled" value="<%= collection.first.dateFin.to_date %>" type="text">
+      </div>
+      <div class="card">
+        <h5 class="card-header">Addresse</h5>
+        <div class="form-group string optional disabled employeur_numero_civique" style="padding: 0px 10px 0px 10px">
+          <label class="control-label string optional disabled" for="employeur_numero_civique">Numéro civique</label>
+          <input id="employeur_numero_civique" class="form-control string optional disabled" disabled="disabled" value="<%= employeur.addresse.numeroCivique %>" type="text">
+        </div>
+        <div class="form-group string optional disabled employeur_rue" style="padding: 0px 10px 0px 10px">
+          <label class="control-label string optional disabled" for="employeur_rue">Rue</label>
+          <input id="employeur_rue" class="form-control string optional disabled" disabled="disabled" value="<%= employeur.addresse.rue %>" type="text">
+        </div>
+        <div class="form-group string optional disabled employeur_codePostal" style="padding: 0px 10px 0px 10px">
+          <label class="control-label string optional disabled" for="employeur_codePostal">Code Postal</label>
+          <input id="employeur_codePostal" class="form-control string optional disabled" disabled="disabled" value="<%= employeur.addresse.codePostal %>" type="text">
+        </div>
+        <div class="form-group string optional disabled employeur_ville" style="padding: 0px 10px 0px 10px">
+          <label class="control-label string optional disabled" for="employeur_ville">Ville</label>
+          <input id="employeur_ville" class="form-control string optional disabled" disabled="disabled" value="<%= employeur.addresse.ville %>" type="text">
+        </div>
+        <div class="form-group string optional disabled employeur_province" style="padding: 0px 10px 0px 10px">
+          <label class="control-label string optional disabled" for="employeur_province">Province</label>
+          <input id="employeur_province" class="form-control string optional disabled" disabled="disabled" value="<%= employeur.addresse.province %>" type="text">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
