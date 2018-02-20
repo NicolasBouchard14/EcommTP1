@@ -17,5 +17,5 @@
                                 end_year: Date.today.year,
                                 order: [:day, :month, :year] %>
   <% end %>
-<%= link_to_remove_association "Enlever cet enfant", f %>
+<%= link_to_remove_association "Enlever cet enfant", f, class: 'btn btn-xs btn-danger' %>
 </div>
