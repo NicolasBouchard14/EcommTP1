@@ -13,9 +13,9 @@
       <td><%= c.nom %></td>
       <td><%= c.prenom %></td>
       <td>
-        <%= link_to 'Show', c, class: 'btn btn-default btn-xs' %>
-        <%= link_to 'Edit', edit_client_path(c), class: 'btn btn-default btn-xs' %>
-        <%= link_to 'Destroy', c, :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-xs btn-danger' %>
+        <%= link_to 'Montrer', c, class: 'btn btn-default btn-xs' %>
+        <%= link_to 'Modifier', edit_client_path(c), class: 'btn btn-default btn-xs' %>
+        <%= link_to 'Détruire', c, :confirm => 'Êtes-vous sûr de vouloir détruire ce client?', :method => :delete, class: 'btn btn-xs btn-danger' %>
       </td>
     </tr>
     <% end %>
