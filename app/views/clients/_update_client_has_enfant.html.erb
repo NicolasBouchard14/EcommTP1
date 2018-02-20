@@ -1,0 +1,18 @@
+<div class="nested-fields">
+  <%= label(:lien, "Père/Fils") %>
+  <%= f.radio_button :lien, 'Père/fils' %>
+  <%= label(:lien, "Père/Fille") %>
+  <%= f.radio_button :lien, 'Père/fille' %>
+  <%= label(:lien, "Mère/Fils") %>
+  <%= f.radio_button :lien, 'Mère/fils' %>
+  <%= label(:lien, "Mère/Fille") %>
+  <%= f.radio_button :lien, 'Mère/fille' %>
+  <%= label(:lien, "Autre") %>
+  <%= f.radio_button :lien, 'Autre' %>
+  <%= f.simple_fields_for :client_has_enfant do |frmClientEnfant| %>
+    <%= frmClientEnfant.input :nom, label: "Nom" %>
+    <%= frmClientEnfant.input :prenom, label: "Prénom" %>
+    <%= frmClientEnfant.input :dateNaissance, label: "Date de naissance", as: :date %>
+  <% end %>
+  <%= link_to_remove_association "Enlever cet enfant", f %>
+</div>

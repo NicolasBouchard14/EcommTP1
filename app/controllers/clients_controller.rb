@@ -38,6 +38,7 @@ class ClientsController < ApplicationController
 # GET /clients/client1/edit
   def edit
     @client = Client.find(params[:id])
+    p(@client.addresse)
   end
 
 # POST /clients
