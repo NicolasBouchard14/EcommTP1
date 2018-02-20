@@ -26,7 +26,7 @@
     <%= f.simple_fields_for :client_has_enfants do |frmClientHasEnfant| %>
       <%= render 'client_has_enfant_fields', :f => frmClientHasEnfant %>
       <% end %>
-      <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants %>
+      <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants, class: 'btn btn-default btn-xs' %>
   </div>
 </div>
 <h2>Étude(s):</h2>
@@ -34,7 +34,7 @@
   <%= f.simple_fields_for :etudes do |frmEtude| %>
     <%= render 'etude_fields', :f => frmEtude %>
     <% end %>
-    <%= link_to_add_association 'Ajouter étude', f, :etudes %>
+    <%= link_to_add_association 'Ajouter étude', f, :etudes, class: 'btn btn-default btn-xs' %>
 </div>
 <%= f.button :submit %>
 <% end %>
