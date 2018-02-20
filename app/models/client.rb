@@ -11,6 +11,7 @@ class Client < ApplicationRecord
   has_many :employeurs, :through => :client_has_employeurs, :dependent => :destroy
   accepts_nested_attributes_for :client_has_enfants, :allow_destroy => true
   accepts_nested_attributes_for :enfants, :allow_destroy => true
+  accepts_nested_attributes_for :client_etat_civils, :allow_destroy => true
   accepts_nested_attributes_for :etat_civils, :allow_destroy => true
   accepts_nested_attributes_for :employeurs, :allow_destroy => true
   accepts_nested_attributes_for :addresse
