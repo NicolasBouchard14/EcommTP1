@@ -1,0 +1,48 @@
+<%= simple_form_for @client, url: {action: "update"} do |f| %>
+  <div id="infoClient">
+    <%= f.input :nom, label: 'Nom' %>
+    <%= f.input :prenom, label: 'Prénom' %>
+    <%= f.input :dateNaissance, label: 'Date de naissance', as: :date,
+                start_year: Date.today.year - 90,
+                end_year: Date.today.year,
+                order: [:day, :month, :year] %>
+    <%= f.input :nas, label: 'Numéro d\'assurance sociale' %>
+    <%= f.input :compteTaxesProprietaire, label: 'Numéro du compte de taxes' %>
+  </div>
+  <h2>Adresse:</h2>
+  <div id="infoAdresse">
+    <%= f.simple_fields_for :addresse do |frmAdresse| %>
+      <%= frmAdresse.input :numeroCivique, label: 'Numéro civique' %>
+      <%= frmAdresse.input :rue, label: 'Rue' %>
+      <%= frmAdresse.input :codePostal, label: 'Code postal' %>
+      <%= frmAdresse.input :ville, label: 'Ville' %>
+      <%= frmAdresse.input :province, label: 'Province' %>
+    <% end %>
+  </div>
+  <h2>Enfant(s):</h2>
+  <div id="infoEnfant">
+    <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
+    <% if !@client.enfants.empty? %>
+      <div id="enfant">
+        <%= :client_has_enfant.each do |client_has_enfant, i| %>
+          <%= f.simple_fields_for client_has_enfant do |frmClientHasEnfant| %>
+            <%= render 'update_client_has_enfant', :f => frmClientHasEnfant, :collection => @client.enfants, :index => i %>
+          <% end %>
+        <% end %>
+    <% end %>
+    <%# <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants %>
+    </div>
+  </div>
+  <h2>Étude(s):</h2>
+  <div id="infoEtude">
+    <% if !@client.enfants.empty? %>
+      <%= @client.etudes.each do |etude| %>
+        <%= f.simple_fields_for etude do |frmEtude| %>
+          <%= render 'updateEtude', :f => frmEtude %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= link_to_add_association 'Ajouter étude', f, :etudes %>
+  </div>
+  <%= f.button :submit %>
+<% end %>
