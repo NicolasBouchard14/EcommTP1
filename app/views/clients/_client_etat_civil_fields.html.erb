@@ -7,5 +7,6 @@
                               start_year: Date.today.year - 90,
                               end_year: Date.today.year,
                               order: [:day, :month, :year] %>
+  <%= f.association :etat_civil, label_method: lambda { |e| "#{e.etat}"} %>
   <%= link_to_remove_association "Enlever cet état civil", f, class: 'btn btn-xs btn-danger' %>
 </div>
