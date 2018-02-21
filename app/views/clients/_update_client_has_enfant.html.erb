@@ -9,10 +9,13 @@
   <%= f.radio_button :lien, 'Mère/fille' %>
   <%= label(:lien, "Autre") %>
   <%= f.radio_button :lien, 'Autre' %>
-  <%= f.simple_fields_for :client_has_enfant do |frmClientEnfant| %>
+  <%= f.simple_fields_for :enfant do |frmClientEnfant| %>
     <%= frmClientEnfant.input :nom, label: "Nom" %>
     <%= frmClientEnfant.input :prenom, label: "Prénom" %>
-    <%= frmClientEnfant.input :dateNaissance, label: "Date de naissance", as: :date %>
+    <%= frmClientEnfant.input :dateNaissance, label: "Date de naissance", as: :date,
+                              start_year: Date.today.year - 90,
+                              end_year: Date.today.year,
+                              order: [:day, :month, :year] %>
   <% end %>
-  <%= link_to_remove_association "Enlever cet enfant", f %>
+  <%= link_to_remove_association "Enlever cet enfant", f, class: 'btn btn-xs btn-danger' %>
 </div>

@@ -15,7 +15,12 @@ class Client < ApplicationRecord
   accepts_nested_attributes_for :etat_civils, :allow_destroy => true
   accepts_nested_attributes_for :client_has_employeurs, :allow_destroy => true
   accepts_nested_attributes_for :employeurs, :allow_destroy => true
+<<<<<<< HEAD
   accepts_nested_attributes_for :client_has_conjoint, :allow_destroy => true
   accepts_nested_attributes_for :addresse
+=======
+  accepts_nested_attributes_for :addresse, :allow_destroy => true
+>>>>>>> 07b59bac0a0b4dc21aa4ab2f9c39268f4e39b7ba
   accepts_nested_attributes_for :etudes, :allow_destroy => true
+  accepts_nested_attributes_for :institutions, :allow_destroy => true
 end

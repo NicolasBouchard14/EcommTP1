@@ -1,0 +1,19 @@
+<div class="col-sm-6">
+  <div class="card h-100">
+    <h3 class="card-header">Conjoint #<%= index %></h3>
+    <div class="card-body">
+      <div class="form-group string optional disabled conjoint_nom">
+        <label class="control-Conlabel string optional disabled" for="conjoint_nom">Nom</label>
+        <input id="conjoint_nom" class="form-control string optional disabled" disabled="disabled" value="<%= conjoint.nom %>" type="text">
+      </div>
+      <div class="form-group string optional disabled conjoint_prenom">
+        <label class="control-label string optional disabled" for="conjoint_prenom">Prenom</label>
+        <input id="conjoint_prenom" class="form-control string optional disabled" disabled="disabled" value="<%= conjoint.prenom %>" type="text">
+      </div>
+      <div class="form-group string optional disabled conjoint_dateNaissance">
+        <label class="control-label string optional disabled" for="conjoint_dateNaissance">Date de naissance</label>
+        <input id="conjoint_dateNaissance" class="form-control string optional disabled" disabled="disabled" value="<%= conjoint.dateNaissance.to_date %>" type="text">
+      </div>
+    </div>
+  </div>
+</div>

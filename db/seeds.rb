@@ -7,8 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
-
 30.times do |i|
   Addresse.create(numeroCivique: Faker::Address.building_number, rue: Faker::Address.street_name, codePostal: Faker::Address.zip,
                   ville: Faker::Address.city, province: Faker::Address.state)
@@ -54,4 +52,8 @@ EtatCivil.create(etat: 'Divorcé')
 10.times do |i|
   ClientEtatCivil.create(client_id: Faker::Number.between(1, 10), etat_civil_id: Faker::Number.between(1, 10),
                             dateDebut: Faker::Date.between(20.years.ago, 10.years.ago), dateFin: Faker::Date.between(10.years.ago, Date.today))
+end
+  10.times do |i|
+  ClientHasConjoint.create(client_id: Faker::Number.between(1, 5), conjoint_id: Faker::Number.between(6, 10),
+                           dateDebut: Faker::Date.between(20.years.ago, 10.years.ago), dateFin: Faker::Date.between(10.years.ago, Date.today))
 end
