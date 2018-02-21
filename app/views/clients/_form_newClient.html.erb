@@ -23,8 +23,8 @@
 <div id="infoEnfant">
   <%= f.input :nombreEnfants, label: 'Nombre d\'enfants', collection: 0..50 %>
   <div id="enfant">
-    <%= f.simple_fields_for :client_has_enfants do |frmClientHasEnfant| %>
-      <%= render 'client_has_enfant_fields', :f => frmClientHasEnfant %>
+    <%= f.simple_fields_for :client_has_enfants do |frmEnfant| %>
+      <%= render 'client_has_enfant_fields', :f => frmEnfant %>
       <% end %>
       <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants, class: 'btn btn-default btn-xs' %>
   </div>
@@ -42,6 +42,13 @@
   <%= render 'client_etat_civil_fields', :f => frmEtatCivil %>
   <% end %>
   <%= link_to_add_association 'Ajouter état civil', f, :client_etat_civils, class: 'btn btn-default btn-xs' %>
+</div>
+<h2>Employeur(s):</h2>
+<div id="infoEmployeur">
+  <%= f.simple_fields_for :client_has_employeurs do |frmEmployeur| %>
+  <%= render 'client_has_employeur_fields', :f => frmEmployeur %>
+  <% end %>
+  <%= link_to_add_association 'Ajouter employeur', f, :client_has_employeurs, class: 'btn btn-default btn-xs' %>
 </div>
 <%= f.button :submit %>
 <% end %>
