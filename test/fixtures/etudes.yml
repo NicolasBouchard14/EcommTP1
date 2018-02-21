@@ -5,7 +5,7 @@ one:
   secteurEtudes: MyString
   niveau: MyString
   dateDebut: 2018-02-04
-  dateCompletion: 2018-02-04
+  dateFin: 2018-02-04
   client_id: 1
   institution_id: 1
 
@@ -14,6 +14,6 @@ two:
   secteurEtudes: MyString
   niveau: MyString
   dateDebut: 2018-02-04
-  dateCompletion: 2018-02-04
+  dateFin: 2018-02-04
   client_id: 2
   institution_id: 2

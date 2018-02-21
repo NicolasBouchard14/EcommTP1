@@ -15,13 +15,7 @@
       <%= frmInst.input :nom, label: 'Nom' %>
       <h4>Adresse institution:</h4>
       <div id="infoInstitutionAdresse">
-        <%= f.simple_fields_for Addresse.find(@client.institutions.first.addresse_id) do |frmInstAdresse| %>
-          <%= frmInstAdresse.input :numeroCivique, label: 'Numéro civique' %>
-          <%= frmInstAdresse.input :rue, label: 'Rue' %>
-          <%= frmInstAdresse.input :codePostal, label: 'Code postal' %>
-          <%= frmInstAdresse.input :ville, label: 'Ville' %>
-          <%= frmInstAdresse.input :province, label: 'Province' %>
-        <% end %>
+        <%= render partial: 'update_addresse', :locals => {:f => frmInst } %>
       </div>
     <% end %>
   </div>

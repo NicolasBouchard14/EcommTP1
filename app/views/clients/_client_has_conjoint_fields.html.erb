@@ -1,12 +1,5 @@
 <div class="nested-fields">
-  <%= f.input :dateDebut, label: "Date de début", as: :date,
-              start_year: Date.today.year - 90,
-              end_year: Date.today.year,
-              order: [:day, :month, :year] %>
-  <%= f.input :dateDebut, label: "Date de fin", as: :date,
-              start_year: Date.today.year - 90,
-              end_year: Date.today.year,
-              order: [:day, :month, :year] %>
+  <%= render partial: 'dateDebutDateFin', :locals => { :f => f} %>
   <%= f.association :conjoint, label_method: lambda { |c| "#{c.nom} #{c.prenom}"} %>
   <%= link_to_remove_association "Enlever ce conjoint", f, class: 'btn btn-xs btn-danger' %>
 </div>

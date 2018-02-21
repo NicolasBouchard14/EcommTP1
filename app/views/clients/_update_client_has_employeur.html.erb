@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <h2>Employeur:</h2>
+  <div id="infoEmployeur">
+    <%= render partial: 'dateDebutDateFin', :locals => { :f => f} %>
+    <%= f.simple_fields_for :employeur do |frmEmp| %>
+      <%= frmEmp.input :name, label: 'Nom' %>
+      <h4>Adresse employeur:</h4>
+      <div id="employeurAdresse">
+        <%= render partial: 'update_addresse', :locals => {:f => frmEmp } %>
+      </div>
+    <% end %>
+    <%= link_to_remove_association "Enlever cet employeur", f, class: 'btn btn-xs btn-danger' %>
+  </div>
+</div>

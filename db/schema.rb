@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20180204221222) do
     t.string "secteurEtudes"
     t.string "niveau"
     t.datetime "dateDebut"
-    t.datetime "dateCompletion"
+    t.datetime "dateFin"
     t.integer "client_id"
     t.integer "institution_id"
     t.index ["client_id"], name: "index_etudes_on_client_id"

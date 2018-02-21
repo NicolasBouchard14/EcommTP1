@@ -1,25 +1,12 @@
 <div class="nested-fields">
   <h2>Employeur:</h2>
   <div id="infoEmployeur">
-    <%= f.input :dateDebut, label: "Date de début", as: :date,
-                                start_year: Date.today.year - 90,
-                                end_year: Date.today.year,
-                                order: [:day, :month, :year] %>
-    <%= f.input :dateFin, label: "Date de fin", as: :date,
-                                start_year: Date.today.year - 90,
-                                end_year: Date.today.year,
-                                order: [:day, :month, :year] %>
-    <%= f.simple_fields_for :employeur do |frmEmp| %>
+    <%= render partial: 'dateDebutDateFin', :locals => { :f => f} %>
+    <%= f.simple_fields_for :employeur_attributes do |frmEmp| %>
       <%= frmEmp.input :name, label: 'Nom' %>
       <h4>Adresse employeur:</h4>
       <div id="employeurAdresse">
-        <%= frmEmp.simple_fields_for :addresse_attributes do |frmEmpAdresse| %>
-          <%= frmEmpAdresse.input :numeroCivique, label: 'Numéro civique' %>
-          <%= frmEmpAdresse.input :rue, label: 'Rue' %>
-          <%= frmEmpAdresse.input :codePostal, label: 'Code postal' %>
-          <%= frmEmpAdresse.input :ville, label: 'Ville' %>
-          <%= frmEmpAdresse.input :province, label: 'Province' %>
-        <% end %>
+        <%= render partial: 'addresse_field', :locals => {:f => frmEmp } %>
       </div>
       <% end %>
       <%= link_to_remove_association "Enlever cet employeur", f, class: 'btn btn-xs btn-danger' %>

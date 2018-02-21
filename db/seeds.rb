@@ -32,7 +32,7 @@ end
 
 10.times do |i|
   Etude.create(secteurEtudes: Faker::Educator.course, niveau: 'Universitaire', dateDebut: Faker::Date.between(10.year.ago, 2.years.ago),
-               dateCompletion: Faker::Date.between(2.years.ago, Date.today), client_id: Faker::Number.between(1, 10), institution_id: Faker::Number.between(1, 10))
+               dateFin: Faker::Date.between(2.years.ago, Date.today), client_id: Faker::Number.between(1, 10), institution_id: Faker::Number.between(1, 10))
 end
 
 10.times do |i|

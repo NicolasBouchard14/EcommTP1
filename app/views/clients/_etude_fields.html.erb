@@ -1,27 +1,12 @@
 <div class="nested-fields">
-  <%= f.input :secteurEtudes, label:  'Secteur' %>
-  <%= f.input :niveau, label:  'Niveau' %>
-  <%= f.input :dateDebut, label:  'Date début', as: :date,
-                              start_year: Date.today.year - 90,
-                              end_year: Date.today.year,
-                              order: [:day, :month, :year] %>
-  <%= f.input :dateDebut, label:  'Date complétion', as: :date,
-                              start_year: Date.today.year - 90,
-                              end_year: Date.today.year,
-                              order: [:day, :month, :year] %>
+  <%= render partial: 'dateDebutDateFin', :locals => { :f => f} %>
   <h3>Institution:</h3>
   <div id="infoInstitution">
     <%= f.simple_fields_for :institution_attributes do |frmInst| %>
       <%= frmInst.input :nom, label: 'Nom' %>
       <h4>Adresse institution:</h4>
       <div id="infoInstitutionAdresse">
-        <%= f.simple_fields_for :addresse_attributes do |frmInstAdresse| %>
-          <%= frmInstAdresse.input :numeroCivique, label: 'Numéro civique' %>
-          <%= frmInstAdresse.input :rue, label: 'Rue' %>
-          <%= frmInstAdresse.input :codePostal, label: 'Code postal' %>
-          <%= frmInstAdresse.input :ville, label: 'Ville' %>
-          <%= frmInstAdresse.input :province, label: 'Province' %>
-        <% end %>
+        <%= render partial: 'addresse_field', :locals => {:f => frmInst } %>
       </div>
     <% end %>
   </div>

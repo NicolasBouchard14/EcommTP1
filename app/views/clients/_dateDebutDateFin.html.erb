@@ -1,0 +1,8 @@
+<%= f.input :dateDebut, label: "Date de début", as: :date,
+            start_year: Date.today.year - 90,
+            end_year: Date.today.year,
+            order: [:day, :month, :year] %>
+<%= f.input :dateFin, label: "Date de fin", as: :date,
+            start_year: Date.today.year - 90,
+            end_year: Date.today.year,
+            order: [:day, :month, :year] %>
