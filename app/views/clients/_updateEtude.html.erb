@@ -15,7 +15,7 @@
       <%= frmInst.input :nom, label: 'Nom' %>
       <h4>Adresse institution:</h4>
       <div id="infoInstitutionAdresse">
-        <%= f.simple_fields_for :addresse do |frmInstAdresse| %>
+        <%= f.simple_fields_for Addresse.find(@client.institutions.first.addresse_id) do |frmInstAdresse| %>
           <%= frmInstAdresse.input :numeroCivique, label: 'Numéro civique' %>
           <%= frmInstAdresse.input :rue, label: 'Rue' %>
           <%= frmInstAdresse.input :codePostal, label: 'Code postal' %>
@@ -25,5 +25,5 @@
       </div>
     <% end %>
   </div>
-  <%# <%= link_to_remove_association "Enlever cette étude", f %>
+  <%= link_to_remove_association "Enlever cette étude", f %>
 </div>

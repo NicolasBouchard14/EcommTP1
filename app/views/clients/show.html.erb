@@ -93,3 +93,19 @@
   </p>
 <% end %>
 
+<% if !@client.client_has_conjoint.empty? %>
+  <p>
+  <div class="container">
+    <h1>Conjoint</h1>
+    <% @client.client_has_conjoint.each_with_index do |clientHasConjoint, i| %>
+      <% if (i % 2 == 0) %>
+        <div class="row">
+          <%= render :partial => 'clients/showConjoint', :locals => {:conjoint => clientHasConjoint.conjoint, :index => i, :collection => @client.client_has_conjoint} %>
+      <% else %>
+        <%= render :partial => 'clients/showConjoint', :locals => {:conjoint => clientHasConjoint.conjoint, :index => i, :collection => @client.client_has_conjoint} %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  </p>
+<% end %>

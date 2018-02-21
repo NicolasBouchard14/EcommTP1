@@ -1,4 +1,4 @@
-<%= simple_form_for @client, url: {action: "update"} do |f| %>
+<%= simple_form_for @client do |f| %>
   <div id="infoClient">
     <%= f.input :nom, label: 'Nom' %>
     <%= f.input :prenom, label: 'Prénom' %>
@@ -25,23 +25,34 @@
     <% if !@client.enfants.empty? %>
       <div id="enfant">
         <%= f.simple_fields_for :client_has_enfants do |frmClientHasEnfant| %>
-          <%= render 'update_client_has_enfant', :f => frmClientHasEnfant, :collection => :enfants %>
+          <%= render 'update_client_has_enfant', :f => frmClientHasEnfant %>
         <% end %>
       </div>
     <% end %>
-    <%# <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants %>
+    <%= link_to_add_association 'Ajouter enfant', f, :client_has_enfants, class: 'btn btn-default btn-xs'  %>
 
   </div>
   <h2>Étude(s):</h2>
-  <div id="infoEtude">
     <% if !@client.etudes.empty? %>
-      <%= @client.etudes.each do |etude| %>
-        <%= f.simple_fields_for :etude do |frmEtude| %>
-          <%= render 'updateEtude', :f => frmEtude %>
-        <% end %>
+    <div id="infoEtude">
+      <%= f.simple_fields_for :etudes do |frmEtude| %>
+        <%= render 'updateEtude', :f => frmEtude %>
       <% end %>
+      </div>
     <% end %>
-    <%# <%= link_to_add_association 'Ajouter étude', f, :etudes %>
+    <%= link_to_add_association 'Ajouter étude', f, :etudes, class: 'btn btn-default btn-xs' %>
+
+  <h2>État civil(s):</h2>
+  <% if !@client.etat_civils.empty? %>
+  <div id="infoEtatCivil">
+    <%= f.simple_fields_for :client_etat_civils do |frmEtatCivil| %>
+      <%= render 'client_etat_civil_fields', :f => frmEtatCivil %>
+    <% end %>
   </div>
+  <% end %>
+  <%= link_to_add_association 'Ajouter état civil', f, :client_etat_civils, class: 'btn btn-default btn-xs' %>
+
+  <div class="form-control">
   <%= f.button :submit %>
+  </div>
 <% end %>
