@@ -66,8 +66,6 @@ gem 'high_voltage','~>3.0.0'
 #gem 'mdbootstrap-rails', '~> 0.1.1'
 gem 'railties', '~> 5.1', '>= 5.1.4'
 gem 'devise', '~> 4.4'
-
 gem 'cocoon' #, '~> 1.2.11'
 gem 'simple_form' #, '~> 3.1.0'
-
 gem 'sqlite3', '~> 1.3', '>= 1.3.11'

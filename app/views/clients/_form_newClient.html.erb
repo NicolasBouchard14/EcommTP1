@@ -52,10 +52,10 @@
   </div>
   <h2>Conjoints(s):</h2>
   <div id="infoConjoint">
-    <%= f.simple_fields_for :client_has_conjoints do |frmConjoint| %>
+    <%= f.simple_fields_for :client_has_conjoint do |frmConjoint| %>
       <%= render 'client_has_conjoint_fields', :f => frmConjoint %>
     <% end %>
-    <%= link_to_add_association 'Ajouter conjoint', f, :client_has_conjoints, class: 'btn btn-default btn-xs' %>
+    <%= link_to_add_association 'Ajouter conjoint', f, :client_has_conjoint, class: 'btn btn-default btn-xs' %>
   </div>
   <%= f.button :submit %>
 <% end %>
