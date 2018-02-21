@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   numeroCivique: MyString
   rue: MyString
   codePostal: 
@@ -8,6 +9,7 @@ one:
   province: MyString
 
 two:
+  id: 2
   numeroCivique: MyString
   rue: MyString
   codePostal: 

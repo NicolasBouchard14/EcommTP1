@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   enfant_id: 1
   client_id: 1
   lien: pere
 
 two:
+  id: 2
   enfant_id: 2
   client_id: 2
   lien: mere

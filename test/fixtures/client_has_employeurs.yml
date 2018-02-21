@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   client_id: 1
   employeur_id: 1
   dateDebut: 2018-02-04 17:12:22
   dateFin: 2018-02-04 17:12:22
 
 two:
+  id: 2
   client_id: 2
   employeur_id: 2
   dateDebut: 2018-02-04 17:12:22

@@ -9,7 +9,7 @@
                                 start_year: Date.today.year - 90,
                                 end_year: Date.today.year,
                                 order: [:day, :month, :year] %>
-    <%= f.simple_fields_for :employeur_attributes do |frmEmp| %>
+    <%= f.simple_fields_for :employeur do |frmEmp| %>
       <%= frmEmp.input :name, label: 'Nom' %>
       <h4>Adresse employeur:</h4>
       <div id="employeurAdresse">

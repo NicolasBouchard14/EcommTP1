@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   etat_civil_id: 1
   client_id: 1
   dateDebut: 2018-02-04 17:02:44
   dateFin: 2018-02-04 17:02:44
 
 two:
-  etat_civils_id: 2
-  clients_id: 2
+  id: 2
+  etat_civil_id: 2
+  client_id: 2
   dateDebut: 2018-02-04 17:02:44
   dateFin: 2018-02-04 17:02:44
