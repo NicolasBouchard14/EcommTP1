@@ -92,7 +92,8 @@ class ClientsController < ApplicationController
       etudes_attributes: [:id, :secteurEtudes, :niveau, :dateDebut, :dateCom, :client_id, institution_attributes: [:id, :nom, addresse_attributes: [:id, :numeroCivique, :rue, :codePostal, :ville, :province]]],
       client_has_enfants_attributes: [:id, :lien, :enfant_id, enfant_attributes: [:id, :nom, :prenom, :dateNaissance]],
       client_etat_civils_attributes: [:id, :dateDebut, :dateFin, :etat_civil_id, etat_civil_attributes: [:id, :etat]],
-      client_has_employeurs_attributes: [:id, :dateDebut, :dateFin, :employeur_id, employeur_attributes: [:id, :name, addresse_attributes: [:id, :numeroCivique, :rue, :codePostal, :ville, :province]]]
+      client_has_employeurs_attributes: [:id, :dateDebut, :dateFin, :employeur_id, employeur_attributes: [:id, :name, addresse_attributes: [:id, :numeroCivique, :rue, :codePostal, :ville, :province]]],
+      client_has_conjoints_attributes: [:id, :dateDebut, :dateFin, :client_id, :conjoint_id, conjoint_attributes:[:id, :prenom, :nom, :dateNaissance]]
     )
   end
 end

@@ -7,6 +7,6 @@
               start_year: Date.today.year - 90,
               end_year: Date.today.year,
               order: [:day, :month, :year] %>
-  <%= f.association :client, label_method: lambda { |c| "#{c.nom}"} %>
+  <%= f.association :conjoint.nom, label_method: lambda { |c| "#{c.nom}"} %>
   <%= link_to_remove_association "Enlever ce conjoint", f, class: 'btn btn-xs btn-danger' %>
 </div>
